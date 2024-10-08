@@ -1,0 +1,80 @@
+{
+    "routes": [
+        {
+            "path": "/",
+            "file": "index.php",
+            "search": true
+        },
+        {
+            "path": "/?fbcli=*",
+            "file": "index.php",
+            "search": false
+        },
+        {
+            "path": "/about",
+            "file": "about.php",
+            "search": true
+        },
+        {
+            "path": "/about/leadership",
+            "file": "leadership.php",
+            "search": true
+        },
+        {
+            "path": "/store",
+            "file": "store.php",
+            "search": false
+        },
+        {
+            "path": "/products/r1",
+            "file": "buy.php",
+            "search": true
+        },
+        {
+            "path": "/products/r1?m=*",
+            "file": "buy.php",
+            "search": false
+        },
+        {
+            "path": "/products/r-app",
+            "file": "app.php",
+            "search": true
+        },
+        {
+            "path": "/blog",
+            "file": "blog.php",
+            "search": false
+        },
+        {
+            "path": "/blog/*",
+            "file": "single.php",
+            "search": false
+        },
+        {
+            "path": "/search?q=*",
+            "file": "search.php",
+            "search": false
+        },
+        {
+            "path": "/api/searchindex",
+            "file": "searchindex.php",
+            "search": false
+        },
+        {
+            "path": "/api/livesearch?q=*",
+            "file": "livesearch.php",
+            "search": false
+        },
+        {
+            "path": "/api/llm?q=*",
+            "file": "llm.php",
+            "search": false
+        },
+
+        {
+            "path": "/install",
+            "file": "install.php",
+            "search": false
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+
+    # This rule will catch all requests and forward them to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Block access to .env, composer.lock files, and the vendor folder
+<FilesMatch "\.(env|lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

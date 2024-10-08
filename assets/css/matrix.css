@@ -1,0 +1,85 @@
+:root {
+    --background-rgb: 92 174 241;
+    --background-light-rgb: 117 79 255;
+    --hyperplexed-main-rgb: 92 174 241;
+    --hyperplexed-main-light-rgb: 0 140 255;
+    --hyperplexed-secondary-rgb: 92 174 241;
+    --card-size: 480px;
+    --font-size: 1.2rem;
+}
+
+.card-track {
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.card-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 4;
+}
+
+.card-gradient {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(rgb(var(--background-light-rgb)) 40%,
+            rgb(var(--hyperplexed-main-rgb)) 50%,
+            rgb(var(--hyperplexed-main-light-rgb)),
+            rgb(var(--hyperplexed-secondary-rgb)));
+    mix-blend-mode: darken;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.card-letters {
+    --x: 0px;
+    --y: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    font-size: var(--font-size);
+    font-weight: 500;
+    word-wrap: break-word;
+    opacity: 0;
+    transition: opacity 400ms;
+    -webkit-mask-image: radial-gradient(calc(var(--card-size) * 0.8) circle at var(--x) var(--y),
+            rgb(255 255 255) 20%,
+            rgb(255 255 255 / 25%),
+            transparent);
+    scale: 1.03;
+    user-select: none;
+}
+
+.card:hover .card-letters,
+.mobile .card .card-letters {
+    opacity: 1;
+}
